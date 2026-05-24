@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font imports   -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white tiktok-sans-regular">
+    <!-- Navbar   -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar saira-condensed-regular" aria-label="Main navigation">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="image/character_takoyaki.png" alt="Takoyaki Character">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  href="content.html">Content</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="form.html"><strong>Feedback</strong></a>
+                  </li>
+                  <li class="nav-item">
+                      <button id="increaseFontBtn" class="btn btn-sm btn-primary">A+</button>
+                      <button id="decreaseFontBtn" class="btn btn-sm btn-secondary">A−</button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+
+    <!-- Form Container   -->
+  <div class="container" style="padding-top: 120px;">
+    <div class="form-container">
+      <h1 class="form-title display-4">Join our newsletter! [Its free!]</h1>
+      <form id="signupForm" novalidate>
+          Full Name  
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required autocomplete="name" aria-describedby="fullNameFeedback">
+          <div class="invalid-feedback" id="fullNameFeedback">
+            Please provide a valid name.
+          </div>
+        </div>
+<!-- 
+          Email   -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required autocomplete="email" aria-describedby="emailFeedback">
+          <div class="invalid-feedback" id="emailFeedback">
+            Please provide a valid email address.
+          </div>
+        </div>
+
+          <!-- Password   -->
+        <div class="mb-3">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Enter your password" minlength="6" required autocomplete="new-password" aria-describedby="passwordFeedback">
+          <div class="invalid-feedback" id="passwordFeedback">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+<!-- 
+         Confirm Password   -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required aria-describedby="confirmPasswordFeedback">
+          <div class="invalid-feedback" id="confirmPasswordFeedback">
+            Passwords do not match.
+          </div>
+        </div>
+
+         <!-- Country Selection   -->
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select class="form-select" id="country" required autocomplete="country-name" aria-describedby="countryFeedback">
+            <option value="" selected disabled>Choose your country...</option>
+            <option value="singapore">Singapore</option>
+            <option value="japan">Japan</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="invalid-feedback" id="countryFeedback">
+            Please select your country.
+          </div>
+        </div>
+
+          <!-- Gender Selection   -->
+        <div class="mb-3">
+          <fieldset>
+            <legend class="text-dark">Gender</legend>
+            <div class="gender-group">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" required aria-describedby="genderFeedback">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" required aria-describedby="genderFeedback">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="other-gender" value="other" required aria-describedby="genderFeedback">
+                <label class="form-check-label" for="other-gender">Other</label>
+              </div>
+            </div>
+            <div class="invalid-feedback" id="genderFeedback">
+              Please select your gender.
+            </div>
+          </fieldset>
+        </div>
+<!-- 
+          Feedback/Comments Textarea   -->
+        <div class="mb-3">
+          <label for="feedback" class="form-label">Your Feedback about the website!</label>
+          <textarea class="form-control" id="feedback" rows="4" placeholder="Share your thoughts with us..."></textarea>
+          <small id="feedbackCharCount" class="form-text text-muted">0 characters</small>
+        </div>
+
+          <!-- Overall Satisfaction Range Slider   -->
+        <div class="mb-3">
+          <label for="satisfaction" class="form-label">Overall Satisfaction (1-5)</label>
+          <input type="range" class="form-range" id="satisfaction" min="1" max="5" step="1" value="3">
+          <div class="d-flex justify-content-between mt-1">
+            <small class="text-muted">1 (Very Dissatisfied)</small>
+            <small class="text-muted">5 (Very Satisfied)</small>
+          </div>
+        </div>
+
+          Terms and Conditions  
+        <div class="mb-4 form-check">
+          <input type="checkbox" class="form-check-input" id="terms" required aria-describedby="termsFeedback">
+          <label class="form-check-label" for="terms">
+            I agree to the <a class="text-decoration-none" style="color: #e74c3c;">terms and conditions</a>
+          </label>
+          <div class="invalid-feedback" id="termsFeedback">
+            You must agree to the terms and conditions.
+          </div>
+        </div>
+
+          Submit Button  
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Join Community</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <!-- Success Modal   -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content success-modal">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-5">
+          <div class="success-icon mb-4">
+            <div class="checkmark-circle">
+              <div class="checkmark"></div>
+            </div>
+          </div>
+          <h2 class="modal-title mb-3" id="successModalLabel">Welcome to Our Community!</h2>
+          <p class="lead mb-4">Thank you for joining us on this journey to explore Japanese culture and festivals.</p>
+          <p class="text-muted">You'll receive a confirmation email shortly with more information about upcoming festivals and exclusive content.</p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center pb-4">
+          <button type="button" class="btn btn-outline-light me-3" data-bs-dismiss="modal">Close</button>
+          <button type="button" onclick="location.href='content.html'" class="btn btn-primary">Explore Festivals</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Custom cursor   -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor__circle"></div>
+    <span class="cursor__label" id="cursorLabel">scroll</span>
+  </div>
+<!-- 
+   Scripts - IMPORTANT: Load Bootstrap first, then your custom script   -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
